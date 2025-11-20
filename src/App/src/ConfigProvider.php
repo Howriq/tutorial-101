@@ -59,15 +59,7 @@ use function getcwd;
  *              class: class-string<MappingDriver>,
  *          },
  *      },
- *      fixtures: non-empty-string,
  *      migrations: array{
- *          table_storage: array{
- *              table_name: non-empty-string,
- *              version_column_name: non-empty-string,
- *              version_column_length: int,
- *              executed_at_column_name: non-empty-string,
- *              execution_time_column_name: non-empty-string,
- *          },
  *          migrations_paths: array<non-empty-string, non-empty-string>,
  *          all_or_nothing: bool,
  *          check_database_platform: bool,
@@ -99,11 +91,7 @@ class ConfigProvider
     }
 
     /**
-     * @return array{
-     *     delegators: array<class-string, array<class-string>>,
-     *     factories: array<class-string, class-string>,
-     *     aliases: array<class-string, string>
-     * }
+     * @return DependenciesType
      */
     public function getDependencies(): array
     {
