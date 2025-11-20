@@ -91,7 +91,10 @@ class ConfigProvider
     }
 
     /**
-     * @return DependenciesType
+     * @return array{
+     *     delegators: array<class-string, array<class-string>>,
+     *     factories: array<class-string, class-string>,
+     * }
      */
     public function getDependencies(): array
     {
@@ -134,9 +137,6 @@ class ConfigProvider
         ];
     }
 
-    /**
-     * @return DoctrineConfigType
-     */
     private function getDoctrineConfig(): array
     {
         return [
