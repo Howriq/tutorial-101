@@ -16,8 +16,8 @@ use Light\App\Handler\GetIndexViewHandler;
 use Mezzio\Application;
 use Ramsey\Uuid\Doctrine\UuidType;
 use Roave\PsrContainerDoctrine\EntityManagerFactory;
-
 use Symfony\Component\Cache\Adapter\AdapterInterface;
+
 use function getcwd;
 
 /**
@@ -153,12 +153,12 @@ class ConfigProvider
             'configuration' => [
                 'orm_default' => [
                     'entity_listener_resolver' => EntityListenerResolverInterface::class,
-                    'result_cache'       => 'filesystem',
-                    'metadata_cache'     => 'filesystem',
-                    'query_cache'        => 'filesystem',
-                    'hydration_cache'    => 'array',
-                    'typed_field_mapper' => null,
-                    'second_level_cache' => [
+                    'result_cache'             => 'filesystem',
+                    'metadata_cache'           => 'filesystem',
+                    'query_cache'              => 'filesystem',
+                    'hydration_cache'          => 'array',
+                    'typed_field_mapper'       => null,
+                    'second_level_cache'       => [
                         'enabled'                    => true,
                         'default_lifetime'           => 3600,
                         'default_lock_lifetime'      => 60,
