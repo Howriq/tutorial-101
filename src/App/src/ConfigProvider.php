@@ -12,8 +12,6 @@ use Dot\Cache\Adapter\FilesystemAdapter;
 use Light\App\Factory\GetIndexViewHandlerFactory;
 use Light\App\Handler\GetIndexViewHandler;
 use Mezzio\Application;
-use Ramsey\Uuid\Doctrine\UuidBinaryOrderedTimeType;
-use Ramsey\Uuid\Doctrine\UuidBinaryType;
 use Ramsey\Uuid\Doctrine\UuidType;
 use Roave\PsrContainerDoctrine\EntityManagerFactory;
 
