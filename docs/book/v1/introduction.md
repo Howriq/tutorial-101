@@ -8,4 +8,4 @@ If not, we recommend [AlmaLinux](https://almalinux.org/) in a WSL2 container
 - A fresh installation of [Dotkernel Light](https://github.com/dotkernel/light)
 - Default UTF-8 encoding for files and LF type line separator
 
-For any further tips we suggest that you have a look at our [development documentation](https://docs.dotkernel.org/development/v2/setup/installation/).
+For any further tips related to the development environment we suggest that you check out our [development documentation](https://docs.dotkernel.org/development/v2/setup/installation/).

@@ -5,7 +5,7 @@
 The first step is to add alongside your current packages the required entries for our Doctrine installation.
 We would add the following to our `composer.json` file located in our root folder:
 
-![composer](images/composer.png)
+<img src="images/composer.png" width="640">
 
 ```text
 "dotkernel/dot-cache": "^4.0",
@@ -47,7 +47,7 @@ After successfully installing our dependencies we now need to configure our Doct
 
 In the file `config/autoload/local.php` the structure would be updated like this:
 
-![local.php](images/local.png)
+<img src="images/local.png" width="550">
 
 ```php
 $databases = [
@@ -84,8 +84,9 @@ This package takes all the provided configs from the `config/config.php` file an
 
 Our new `src/App/src/ConfigProvider.php` class would look like this now:
 
-![Config provider factories update](images/config-provider-1.png)
-![Doctrine config function](images/config-provider-2.png)
+<img src="images/config-provider-1.png" width="620">
+<br/>
+<img src="images/config-provider-2.png" width="620">
 
 ```php
 public function __invoke(): array
@@ -170,7 +171,7 @@ private function getDoctrineConfig(): array
 We also require a new file `config/cli-config.php`.
 It initializes and returns a `DependencyFactory` that Doctrine Migrations uses to run migrations.
 
-![cli-config](images/cli-config.png)
+<img src="images/cli-config.png" width="620">
 
 ```php
 <?php
@@ -198,7 +199,7 @@ return DependencyFactory::fromEntityManager(
 Now that everything has been configured we only need to do one last thing, to create an executable for the Doctrine CLI.
 In our case we will create a `doctrine` file inside the application's `bin` directory:
 
-![bin/doctrine](images/doctrine.png)
+<img src="images/doctrine.png" width="620">
 
 ```php
 #!/usr/bin/env php
@@ -223,7 +224,7 @@ ConsoleRunner::run(new SingleManagerProvider($entityManager));
 (Optional) To keep things tidy, we recommend making an executable for the migrations of Doctrine as well.
 For this, we create `doctrine-migrations` file inside the application's `bin` directory:
 
-![bin/doctrine-migrations](images/doctrine-migrations.png)
+<img src="images/doctrine-migrations.png" width="640">
 
 ```php
 #!/usr/bin/env php
