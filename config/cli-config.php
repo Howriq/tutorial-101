@@ -11,7 +11,7 @@ $container = require 'config/container.php';
 
 $entityManager = $container->get(EntityManager::class);
 $entityManager->getEventManager();
-
+//
 return DependencyFactory::fromEntityManager(
     new ConfigurationArray($container->get('config')['doctrine']['migrations']),
     new ExistingEntityManager($entityManager)
