@@ -5,8 +5,6 @@
 The first step is to add alongside your current packages the required entries for our Doctrine installation.
 We would add the following to our `composer.json` file located in our root folder:
 
-<img src="images/composer.png" width="640">
-
 ```text
 "dotkernel/dot-cache": "^4.0",
 "ramsey/uuid": "^4.5.0",
@@ -47,8 +45,6 @@ After successfully installing our dependencies we now need to configure our Doct
 
 In the file `config/autoload/local.php` the structure would be updated like this:
 
-<img src="images/local.png" width="550">
-
 ```php
 $databases = [
     'default' => [
@@ -83,10 +79,6 @@ With the very nice utility of the package `laminas/laminas-config-aggregator` we
 This package takes all the provided configs from the `config/config.php` file and merges them into one.
 
 Our new `src/App/src/ConfigProvider.php` class would look like this now:
-
-<img src="images/config-provider-1.png" width="620">
-<br/>
-<img src="images/config-provider-2.png" width="620">
 
 ```php
 public function __invoke(): array
@@ -171,7 +163,7 @@ private function getDoctrineConfig(): array
 We also require a new file `config/cli-config.php`.
 It initializes and returns a `DependencyFactory` that Doctrine Migrations uses to run migrations.
 
-<img src="images/cli-config.png" width="620">
+![cli-config](images/cli-config.png)
 
 ```php
 <?php
@@ -199,8 +191,6 @@ return DependencyFactory::fromEntityManager(
 Now that everything has been configured we only need to do one last thing, to create an executable for the Doctrine CLI.
 In our case we will create a `doctrine` file inside the application's `bin` directory:
 
-<img src="images/doctrine.png" width="620">
-
 ```php
 #!/usr/bin/env php
 <?php
@@ -223,8 +213,6 @@ ConsoleRunner::run(new SingleManagerProvider($entityManager));
 
 (Optional) To keep things tidy, we recommend making an executable for the migrations of Doctrine as well.
 For this, we create `doctrine-migrations` file inside the application's `bin` directory:
-
-<img src="images/doctrine-migrations.png" width="640">
 
 ```php
 #!/usr/bin/env php
