@@ -96,12 +96,12 @@ class ConfigProvider
             ],
             'configuration' => [
                 'orm_default' => [
-                    'result_cache'             => 'filesystem',
-                    'metadata_cache'           => 'filesystem',
-                    'query_cache'              => 'filesystem',
-                    'hydration_cache'          => 'array',
-                    'typed_field_mapper'       => null,
-                    'second_level_cache'       => [
+                    'result_cache'       => 'filesystem',
+                    'metadata_cache'     => 'filesystem',
+                    'query_cache'        => 'filesystem',
+                    'hydration_cache'    => 'array',
+                    'typed_field_mapper' => null,
+                    'second_level_cache' => [
                         'enabled'                    => true,
                         'default_lifetime'           => 3600,
                         'default_lock_lifetime'      => 60,
@@ -116,14 +116,6 @@ class ConfigProvider
                 'orm_default' => [
                     'class' => MappingDriverChain::class,
                 ],
-            ],
-            'migrations'    => [
-                // Modify this line based on where you would like to have you migrations
-                'migrations_paths'        => [
-                    'Migrations' => 'src/Migrations',
-                ],
-                'all_or_nothing'          => true,
-                'check_database_platform' => true,
             ],
             'types'         => [
                 UuidType::NAME => UuidType::class,
