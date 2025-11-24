@@ -16,8 +16,8 @@ We would add the following to our `composer.json` file located in our root folde
 
 `dotkernel/dot-cache`
 
-Provides caching support for DotKernel applications.
-It offers a PSR-6 and PSR-16 compatible caching system that integrates smoothly with DotKernel's service container.
+Provides caching support for Dotkernel applications.
+It offers a PSR-6 and PSR-16 compatible caching system that integrates smoothly with Dotkernel's service container.
 
 `ramsey/uuid`
 
@@ -32,7 +32,7 @@ It allows Doctrine to store and retrieve UUIDs as proper value objects instead o
 `roave/psr-container-doctrine`
 
 Provides a set of factory classes that integrate Doctrine ORM with any PSR-11 container.
-It simplifies wiring Doctrine EntityManager, DBAL, configuration, and related services in frameworks like DotKernel.
+It simplifies wiring Doctrine EntityManager, DBAL, configuration, and related services in frameworks like Dotkernel.
 
 `phpstan/phpstan-doctrine (dev requirement)`
 
