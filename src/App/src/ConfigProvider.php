@@ -54,7 +54,6 @@ class ConfigProvider
                 'doctrine.entity_manager.orm_default' => EntityManagerFactory::class,
                 GetIndexViewHandler::class            => GetIndexViewHandlerFactory::class,
                 EntityListenerResolver::class         => EntityListenerResolverFactory::class,
-
             ],
             'aliases'    => [
                 EntityManager::class          => 'doctrine.entity_manager.orm_default',
@@ -123,7 +122,7 @@ class ConfigProvider
                 ],
             ],
             'migrations'    => [
-                'table_storage'           => [
+                'table_storage' => [
                     'table_name'                 => 'doctrine_migration_versions',
                     'version_column_name'        => 'version',
                     'version_column_length'      => 191,

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Light\Book\Entity;
 
-use Light\App\Entity\UuidIdentifierTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Light\App\Entity\AbstractEntity;
 use Light\App\Entity\TimestampsTrait;
+use Light\App\Entity\UuidIdentifierTrait;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'books')]
 #[ORM\HasLifecycleCallbacks]
 class Book extends AbstractEntity
 {
-    use UuidIdentifierTrait;
     use TimestampsTrait;
+    use UuidIdentifierTrait;
 
     #[ORM\Column(name: 'title', type: 'string', length: 500, nullable: true)]
     private ?string $title = null;
@@ -53,7 +53,7 @@ class Book extends AbstractEntity
     public function getArrayCopy(): array
     {
         return [
-            'title' => $this->title,
+            'title'  => $this->title,
             'author' => $this->author,
         ];
     }

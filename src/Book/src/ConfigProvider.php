@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Light\Book;
 
 use Doctrine\ORM\Mapping\Driver\AttributeDriver;
-use Light\App\Types\UuidType;
 
 class ConfigProvider
 {
@@ -20,10 +19,8 @@ class ConfigProvider
     private function getDependencies(): array
     {
         return [
-            'delegators' => [
-            ],
-            'factories'  => [
-            ],
+            'delegators' => [],
+            'factories'  => [],
         ];
     }
 
