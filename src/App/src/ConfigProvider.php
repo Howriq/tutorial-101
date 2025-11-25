@@ -18,8 +18,8 @@ use Light\App\Resolver\EntityListenerResolver;
 use Light\App\Types\UuidType;
 use Mezzio\Application;
 use Roave\PsrContainerDoctrine\EntityManagerFactory;
-
 use Symfony\Component\Cache\Adapter\AdapterInterface;
+
 use function getcwd;
 
 /**
