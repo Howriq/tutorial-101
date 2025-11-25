@@ -5,9 +5,34 @@ declare(strict_types=1);
 namespace Light\Book;
 
 use Doctrine\ORM\Mapping\Driver\AttributeDriver;
+use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 
+/**
+ * @phpstan-type ConfigType array{
+ *      dependencies: DependenciesType,
+ *      doctrine: DoctrineConfigType,
+ * }
+ * @phpstan-type DoctrineConfigType array{
+ *      driver: array{
+ *          orm_default: array{
+ *              drivers: array<non-empty-string, non-empty-string>,
+ *          },
+ *          BookEntities: array{
+ *              class: class-string<MappingDriver>,
+ *              cache: non-empty-string,
+ *              paths: non-empty-string[],
+ *          },
+ *      },
+ * }
+ * @phpstan-type DependenciesType array{
+ *       factories: array<class-string, class-string>,
+ * }
+ */
 class ConfigProvider
 {
+    /**
+     * @return ConfigType
+     */
     public function __invoke(): array
     {
         return [
@@ -16,6 +41,9 @@ class ConfigProvider
         ];
     }
 
+    /**
+     * @return DependenciesType
+     */
     private function getDependencies(): array
     {
         return [
@@ -24,6 +52,9 @@ class ConfigProvider
         ];
     }
 
+    /**
+     * @return DoctrineConfigType
+     */
     private function getDoctrineConfig(): array
     {
         return [

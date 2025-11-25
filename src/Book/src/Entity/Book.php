@@ -50,6 +50,12 @@ class Book extends AbstractEntity
         $this->author = $author;
     }
 
+    /**
+     * @return array{
+     *     title:string|null,
+     *     author:string|null
+     * }
+     */
     public function getArrayCopy(): array
     {
         return [
