@@ -7,17 +7,18 @@ namespace Light\Book\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Light\App\Entity\AbstractEntity;
 use Light\Book\Repository\BookRepository;
+use Ramsey\Uuid\UuidInterface;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 #[ORM\Table(name: 'books')]
 #[ORM\HasLifecycleCallbacks]
 class Book extends AbstractEntity
 {
-    #[ORM\Column(name: 'title', type: 'string', length: 500, nullable: true)]
-    private ?string $title = null;
+    #[ORM\Column(name: 'title', type: 'string', length: 500)]
+    private string $title;
 
-    #[ORM\Column(name: 'author', type: 'string', length: 500, nullable: true)]
-    private ?string $author = null;
+    #[ORM\Column(name: 'author', type: 'string', length: 500)]
+    private string $author;
 
     public function getTitle(): ?string
     {
@@ -41,13 +42,15 @@ class Book extends AbstractEntity
 
     /**
      * @return array{
-     *     title: string|null,
-     *     author: string|null
+     *     id: UuidInterface,
+     *     title: string,
+     *     author: string
      * }
      */
     public function getArrayCopy(): array
     {
         return [
+            'id'     => $this->id,
             'title'  => $this->title,
             'author' => $this->author,
         ];

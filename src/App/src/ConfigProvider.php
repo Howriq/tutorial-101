@@ -173,7 +173,7 @@ class ConfigProvider
                     'executed_at_column_name'    => 'executed_at',
                     'execution_time_column_name' => 'execution_time',
                 ],
-                // Modify this line based on where you would like to have you migrations
+                // Modify this line based on where you would like to have your migrations
                 'migrations_paths'        => [
                     'Migrations' => 'src/App/src/Migration',
                 ],
