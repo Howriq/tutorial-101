@@ -336,7 +336,7 @@ We have specified which Repository will handle queries for this Entity.
 This allows us to write custom database logic for it.
 
 Same as for the Entities, we need to create a base and our future Repositories.
-Because of that we will create two new directories: `src/App/src/Repository` and `src/Book/src/Repository`.
+Because of that, we will create two new directories: `src/App/src/Repository` and `src/Book/src/Repository`.
 
 Two repositories shall be created:
 
@@ -530,6 +530,7 @@ php bin/doctrine-migrations.php migrations:migrate
 ```
 
 The output should be similar to this:
+
 ```terminaloutput
 [OK] Successfully migrated to version: Migrations\Version2025112718363
 ```
