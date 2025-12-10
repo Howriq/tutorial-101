@@ -74,7 +74,7 @@ class RoutesDelegator
 
 ## Handling the Request
 
-Now that the route is exists, we need to create the class that will handle our request.
+Now that the route exists, we need to create the class that will handle our request.
 Create a new directory `src/Book/src/Handler` and create the file `GetBooksHandler.php`.
 
 ```php
@@ -117,9 +117,9 @@ class GetBooksHandler implements RequestHandlerInterface
 The custom functions that we have created in the `BookRepository.php` retrieve our desired values and pass it to the `books` HTML template that is being rendered.
 We will crate the HTML file in the next part of this chapter.
 
-## HTML Template for Book Listing
+## Twig Template for Book Listing
 
-The `books` HTML template is currently missing, we now need to create it under the following path: `src/Book/src/templates/page/books.html.twig`.
+The `books` template is currently missing, we now need to create it under the following path: `src/Book/src/templates/page/books.html.twig`.
 
 ```html
 {% extends '@layout/default.html.twig' %}
@@ -172,8 +172,7 @@ The `books` HTML template is currently missing, we now need to create it under t
 Now that our route, handler, repository methods and view are ready, we need to **register them so the application can use them**.
 In `src/Book/src/ConfigProvider.php` we need to add the following changes:
 
-![book-config-1](images/chapter-3/book-config-1.png)
-![book-config-2](images/chapter-3/book-config-2.png)
+![book-config](images/chapter-3/book-config.png)
 
 ```php
 public function __invoke(): array
@@ -201,7 +200,7 @@ private function getDependencies(): array
 }
 
 /**
-@return array{
+ * @return array{
  *     paths: array{page: array{literal-string&non-falsy-string}}
  * }
  */
@@ -304,7 +303,7 @@ There are two options in this case:
 - Use Doctrine Fixtures
 - Add entries manually from the Database Client.
 
-**We recommend using fixtures**, but if you choose the alternative approach, feel free to skip directly to the **final section** of this chapter.
+**We recommend using fixtures**, but if you choose the alternative approach, feel free to skip directly to the [final](#listing-result) section of this chapter.
 
 ## Doctrine Fixtures
 
